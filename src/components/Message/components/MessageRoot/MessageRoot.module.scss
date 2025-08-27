@@ -1,0 +1,12 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+
+  &:global(.message-out) {
+    justify-content: flex-end;
+  }
+
+  &:global(.message-in) {
+    justify-content: flex-start;
+  }
+}
