@@ -40,7 +40,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "publish": "npm run build && npm publish --access public"
   },
   "dependencies": {
     "clsx": "^2.1.1"
