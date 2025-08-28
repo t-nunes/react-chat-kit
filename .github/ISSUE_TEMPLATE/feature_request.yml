@@ -1,0 +1,32 @@
+name: "Feature Request"
+description: "Use this template to request a new feature"
+title: "feat: "
+labels: ["feature"]
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: "Summary"
+      description: "Briefly describe the feature"
+      placeholder: "Create a component to handle message actions"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem Statement"
+      description: "Explain the problem this feature solves"
+      placeholder: "Current chat UI lacks a dedicated component for message actions."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Proposed Solution"
+      description: "Describe your proposed implementation"
+      placeholder: "Implement a MessageActions component using styled-components..."
+  - type: textarea
+    id: context
+    attributes:
+      label: "Additional Context"
+      description: "Add any other details or references"
