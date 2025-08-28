@@ -1,11 +1,17 @@
 {
   "name": "react-chat-kit",
-  "private": true,
+  "private": false,
   "version": "0.0.1",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "keywords": [
+    "react",
+    "whatsapp",
+    "ui",
+    "ui-kit"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/t-nunes/react-chat-kit"
