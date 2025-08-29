@@ -1,61 +1,46 @@
 /// <reference types="vitest/config" />
 import { defineConfig } from 'vite';
+import { extname, relative, resolve } from 'path';
 import react from '@vitejs/plugin-react';
+import dts from 'vite-plugin-dts';
+import { libInjectCss } from 'vite-plugin-lib-inject-css';
+import { glob } from 'glob';
+import { fileURLToPath } from 'node:url';
 
 // https://vite.dev/config/
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 const dirname =
   typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(dirname, 'src'),
     },
   },
-  test: {
-    projects: [
-      {
-        extends: true,
-        plugins: [
-          // The plugin will run tests for the stories defined in your Storybook config
-          // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
-          storybookTest({
-            configDir: path.join(dirname, '.storybook'),
-          }),
-        ],
-        test: {
-          name: 'storybook',
-          browser: {
-            enabled: true,
-            headless: true,
-            provider: 'playwright',
-            instances: [
-              {
-                browser: 'chromium',
-              },
-            ],
-          },
-          setupFiles: ['.storybook/vitest.setup.ts'],
-        },
-      },
-    ],
-  },
+  plugins: [react(), dts(), libInjectCss()],
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.tsx'),
-      name: 'ChatKit',
-      fileName: (fmt) => (fmt === 'es' ? 'index.mjs' : 'index.cjs'),
-      formats: ['es', 'cjs'],
+      entry: resolve(__dirname, 'src/main.ts'),
+      name: 'react-chat-kit',
+      formats: ['es'],
+      fileName: 'react-chat-kit',
     },
-    rollupOptions: { external: ['react', 'react-dom'] },
-    sourcemap: true,
-    cssCodeSplit: true,
-    outDir: 'dist',
-    emptyOutDir: true,
+    rollupOptions: {
+      external: ['react', 'react/jsx-runtime'],
+      input: Object.fromEntries(
+        glob
+          .sync('src/**/*.{ts,tsx}')
+          .map((file) => [
+            relative('src', file.slice(0, file.length - extname(file).length)),
+            fileURLToPath(new URL(file, import.meta.url)),
+          ]),
+      ),
+      output: {
+        assetFileNames: 'assets/[name][extname]',
+        entryFileNames: '[name].js',
+      },
+    },
   },
 });
