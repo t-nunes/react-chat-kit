@@ -19,13 +19,16 @@ export default defineConfig({
       '@': path.resolve(dirname, 'src'),
     },
   },
-  plugins: [react(), dts(), libInjectCss()],
+  plugins: [
+    react(),
+    dts({ entryRoot: 'src', insertTypesEntry: true, outDir: 'dist' }),
+    libInjectCss(),
+  ],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/main.ts'),
-      name: 'react-chat-kit',
       formats: ['es'],
-      fileName: 'react-chat-kit',
+      fileName: 'main.js',
     },
     rollupOptions: {
       external: ['react', 'react/jsx-runtime'],
