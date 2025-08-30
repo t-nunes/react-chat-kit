@@ -7,6 +7,13 @@ The goal is to provide simple components with a cleaner design, closer to a fami
 ## Installation
 
 ```bash
-npm install chat-kit
+npm install react-chat-kit
 # or
-yarn add chat-kit
+yarn add react-chat-kit
+```
+## Usage
+Before using any component, import the default style tokens:
+
+```jsx
+import 'react-chat-kit/styles/tokens.css';
+```
