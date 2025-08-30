@@ -1,0 +1,12 @@
+.MessageStatus {
+  color: var(--ck-message-status--color);
+  font-size: var(--ck-message-status--size);
+}
+
+.received {
+  color: var(--ck-message-status--color-received);
+}
+
+.error {
+  color: var(--ck-message-status--color-error);
+}

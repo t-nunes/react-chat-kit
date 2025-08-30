@@ -19,6 +19,11 @@
   --ck-message--in-background: #fff;
   --ck-message--color: #0a0a0a;
   --ck-message--out-background: #D9FDD3;
+
+  --ck-message-status--size: var(--ck-font-size-2);
+  --ck-message-status--color: rgba(0, 0, 0, 0.6);
+  --ck-message-status--color-received: #3B86F6;
+  --ck-message-status--color-error: #EF4444;
 }
 
 .dark-theme,
@@ -27,4 +32,6 @@
   --ck-message--color: #fff;
   --ck-message--in-background: #242626;
   --ck-message--out-background: #144D37;
+
+  --ck-message-status--color: rgba(255, 255, 255, 0.6);
 }

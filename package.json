@@ -1,7 +1,7 @@
 {
   "name": "react-chat-kit",
   "private": false,
-  "version": "0.0.5",
+  "version": "0.1.0",
   "type": "module",
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
@@ -21,7 +21,10 @@
     "url": "https://github.com/t-nunes/react-chat-kit/issues"
   },
   "exports": {
-    ".": { "types": "./dist/main.d.ts", "default": "./dist/main.js" },
+    ".": {
+      "types": "./dist/main.d.ts",
+      "default": "./dist/main.js"
+    },
     "./*": "./dist/*"
   },
   "files": [
@@ -42,7 +45,8 @@
     "publish": "npm run build && npm publish --access public"
   },
   "dependencies": {
-    "clsx": "^2.1.1"
+    "clsx": "^2.1.1",
+    "react-icons": "^5.5.0"
   },
   "peerDependencies": {
     "react": ">=18 <20",

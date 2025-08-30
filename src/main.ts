@@ -4,4 +4,5 @@ export type {
   MessageLabelProps,
   MessageContentProps,
   MessageRootProps,
+  MessageStatusProps,
 } from './components/Message';
