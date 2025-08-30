@@ -1,10 +1,23 @@
-import * as React from 'react';
+import type { MessageContentProps } from '@/components/Message';
 import styles from './MessageContent.module.scss';
+import clsx from 'clsx';
 
-type TProps = {
-  children: React.ReactNode;
-};
-
-export const MessageContent = ({ children }: TProps) => {
-  return <div className={styles.wrapper}>{children}</div>;
+export const MessageContent = ({
+  variant = 'default',
+  children,
+  className,
+}: MessageContentProps) => {
+  return (
+    <div
+      className={clsx(
+        styles.wrapper,
+        {
+          [`is-${variant}`]: variant,
+        },
+        className,
+      )}
+    >
+      {children}
+    </div>
+  );
 };

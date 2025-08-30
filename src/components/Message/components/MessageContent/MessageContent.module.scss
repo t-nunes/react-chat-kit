@@ -1,4 +1,5 @@
 .wrapper {
+  position: relative;
   font-size: var(--ck-message--font-size);
   padding: var(--ck-message--padding);
   color: var(--ck-message--color);
@@ -12,5 +13,9 @@
 
   :global(.message-in) & {
     background: var(--ck-message--in-background);
+  }
+
+  :global(.is-sticker) & {
+    background: none;
   }
 }

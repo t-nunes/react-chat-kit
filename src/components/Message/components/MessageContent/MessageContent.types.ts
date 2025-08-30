@@ -1,19 +1,7 @@
-import type { ReactNode } from 'react';
-
-export type MessageVariant = 'out' | 'in';
-
-export type MessageRootProps = {
-  variant?: MessageVariant;
-  children: ReactNode;
-  className?: string;
-};
+export type MessageContentVariant = 'default' | 'sticker' | 'media';
 
 export type MessageContentProps = {
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
-};
-
-export type MessageInformationsProps = {
-  children: ReactNode;
-  className?: string;
+  variant?: MessageContentVariant;
 };
