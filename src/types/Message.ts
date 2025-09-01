@@ -12,4 +12,5 @@ export type MessageBase = {
   isDeleted?: boolean;
   isFromMe: boolean;
   reply?: Reply;
+  onClickSender?: () => void;
 };

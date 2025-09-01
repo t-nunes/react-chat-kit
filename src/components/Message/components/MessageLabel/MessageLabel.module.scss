@@ -1,8 +1,10 @@
+@use '@/styles/units' as u;
+
 .wrapper {
   display: block;
   flex: 0 1 auto;
-  padding-left: 2px;
-  margin-left: -2px;
+  padding-left: u.em(2px);
+  margin-left: u.em(-2px);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

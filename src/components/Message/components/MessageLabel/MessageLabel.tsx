@@ -3,6 +3,8 @@ import styles from './MessageLabel.module.scss';
 import clsx from 'clsx';
 
 export const MessageLabel = ({ children, className, color, onClick }: MessageLabelProps) => {
+  if (!children) return;
+
   const isClickable = !!onClick;
 
   return (

@@ -11,13 +11,17 @@ export { MessageRoot, MessageContent, MessageLabel };
 export type { MessageRootProps, MessageContentProps, MessageLabelProps };
 
 import { MessageStatus } from './components/MessageStatus';
-export type { MessageStatusProps } from './components/MessageStatus';
+export type { MessageStatusProps, TMessageStatus } from './components/MessageStatus';
+
+import { MessageMeta } from './components/MessageMeta';
+export type { MessageMetaProps, MessageMetaVariants } from './components/MessageMeta';
 
 const Message = {
   Root: MessageRoot,
   Content: MessageContent,
   Label: MessageLabel,
   Status: MessageStatus,
+  Meta: MessageMeta,
 };
 
 export { Message };

@@ -1,3 +1,5 @@
+@use '@/styles/units' as u;
+
 .wrapper {
   position: relative;
   font-size: var(--ck-message--font-size);
@@ -15,7 +17,8 @@
     background: var(--ck-message--in-background);
   }
 
-  :global(.is-sticker) & {
+  &:global(.is-sticker) {
     background: none;
+    box-shadow: none;
   }
 }

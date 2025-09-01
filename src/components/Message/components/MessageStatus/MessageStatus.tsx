@@ -20,7 +20,7 @@ export const MessageStatus = ({ status, color }: MessageStatusProps) => {
   const Icon = MAP[status];
 
   const classes = clsx(
-    styles.MessageStatus,
+    styles.wrapper,
     status === 'received' && styles.received,
     status === 'error' && styles.error,
   );

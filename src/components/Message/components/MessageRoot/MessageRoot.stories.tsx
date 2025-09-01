@@ -5,7 +5,7 @@ const meta: Meta<typeof MessageRoot> = {
   title: 'Message/MessageRoot',
   component: MessageRoot,
   args: {
-    fromMe: false,
+    isFromMe: false,
     children: <div>Sample message content</div>,
   },
 };
@@ -15,14 +15,14 @@ type Story = StoryObj<typeof MessageRoot>;
 
 export const FromOthers: Story = {
   args: {
-    fromMe: false,
+    isFromMe: false,
     children: <div>Hello from someone else</div>,
   },
 };
 
 export const FromMe: Story = {
   args: {
-    fromMe: true,
+    isFromMe: true,
     children: <div>My own message</div>,
   },
 };

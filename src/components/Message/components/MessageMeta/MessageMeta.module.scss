@@ -1,0 +1,44 @@
+@use "@/styles/units" as u;
+
+%base {
+  flex: 0;
+  color: var(--ck-message-meta--color);
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  gap: u.rem(4px);
+  font-size: u.rem(11px);
+  line-height: 1em;
+  font-weight: bold;
+}
+
+.default {
+  @extend %base;
+}
+
+.bubble {
+  @extend %base;
+  color: var(--ck-message-meta--color);
+  padding: u.em(4px) u.em(8px);
+  border-radius: var(--ck-radius-3x);
+  box-shadow: var(--ck-message--box-shadow);
+
+  :global(.message-in) & {
+    background: var(--ck-message--in-background);
+  }
+
+  :global(.message-out) & {
+    background: var(--ck-message--out-background);
+  }
+}
+
+.overlay {
+  justify-content: flex-end;
+  flex: 1;
+  width: 100%;
+  background: linear-gradient(to top,rgba(var(--ck-overlay-rgb),.5),rgba(var(--ck-overlay-rgb),0));
+  color: rgba(233, 237, 239, 0.9);
+  padding: u.em(14px) u.em(5px) u.em(5px) u.em(5px);
+}

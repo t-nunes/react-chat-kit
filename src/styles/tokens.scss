@@ -1,27 +1,32 @@
+@use "@/styles/units" as u;
+
 :root,
 :root.light,
 :root[data-theme='light'] {
-  --ck-space-1: 4px;
-  --ck-space-2: 8px;
-  --ck-space-3: 12px;
-  --ck-radius-1x: 2px;
-  --ck-radius-2x: 4px;
-  --ck-radius-3x: 8px;
-  --ck-font-size-1: 12px;
-  --ck-font-size-2: 14px;
-  --ck-font-size-3: 16px;
-  --ck-font-size-4: 18px;
+  --ck-space-1: #{u.em(4px)};
+  --ck-space-2: #{u.em(8px)};
+  --ck-space-3: #{u.em(12px)};
+  --ck-radius-1x: #{u.em(2px)};
+  --ck-radius-2x: #{u.em(4px)};
+  --ck-radius-3x: #{u.em(8px)};
+  --ck-font-size-1: #{u.em(12px)};
+  --ck-font-size-2: #{u.em(14px)};
+  --ck-font-size-3: #{u.em(16px)};
+  --ck-font-size-4: #{u.em(18px)};
+
+  --ck-overlay-rgb: 11, 20, 26;
 
   --ck-message--border-radius: var(--ck-radius-2x);
   --ck-message--box-shadow: rgba(11, 20, 26, 0.13) 0px 1px 0.5px 0px;
   --ck-message--font-size: var(--ck-font-size-2);
-  --ck-message--padding: 5px var(--ck-space-2);
+  --ck-message--padding: #{u.em(5px)} var(--ck-space-2);
   --ck-message--in-background: #fff;
   --ck-message--color: #0a0a0a;
   --ck-message--out-background: #D9FDD3;
 
-  --ck-message-status--size: var(--ck-font-size-2);
-  --ck-message-status--color: rgba(0, 0, 0, 0.6);
+  --ck-message-meta--font-size: #{u.em(11px)};
+  --ck-message-status--size: var(--ck-font-size-1);
+  --ck-message-meta--color: rgba(0, 0, 0, 0.6);
   --ck-message-status--color-received: #3B86F6;
   --ck-message-status--color-error: #EF4444;
 }
@@ -33,5 +38,5 @@
   --ck-message--in-background: #242626;
   --ck-message--out-background: #144D37;
 
-  --ck-message-status--color: rgba(255, 255, 255, 0.6);
+  --ck-message-meta--color: rgba(255, 255, 255, 0.6);
 }

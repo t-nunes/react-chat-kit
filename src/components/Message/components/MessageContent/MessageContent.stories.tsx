@@ -6,6 +6,7 @@ const meta = {
   title: 'Message/MessageContent',
   component: MessageContent,
   args: {
+    variant: 'default',
     children: 'Hello world',
   },
   decorators: [withTheme],

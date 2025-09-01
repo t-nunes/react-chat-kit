@@ -1,6 +1,10 @@
-.MessageStatus {
-  color: var(--ck-message-status--color);
-  font-size: var(--ck-message-status--size);
+@use "@/styles/units" as u;
+
+.wrapper {
+  color: var(--ck-message-meta--color);
+  font-size: u.rem(14px);
+  line-height: var(--ck-message-meta--font-size);
+  margin: u.em(-4px) 0;
 }
 
 .received {
