@@ -1,0 +1,1 @@
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import"./MessageRoot-BZU0sVzP.js";import{M as t}from"./withTheme-Bv35Tilq.js";const o=s=>e.jsx(e.Fragment,{children:e.jsx(t,{children:e.jsx(s,{})})});o.__docgenInfo={description:"",methods:[],displayName:"withMessageContent"};export{o as w};
