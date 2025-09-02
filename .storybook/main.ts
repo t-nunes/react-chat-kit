@@ -14,6 +14,10 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {},
   },
+  viteFinal: async (cfg) => {
+    cfg.base = '/react-chat-kit/';
+    return cfg;
+  },
 };
 
 export default config;
